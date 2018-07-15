@@ -15,7 +15,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-          <li><%= link_to "ロボット投稿", new_listing_path ,class: "active"%></li>
+          
+          <li><%= link_to '<i class="glyphicon glyphicon-pencil"></i> ロボット投稿'.html_safe,  new_listing_path, class: 'btn btn-default' %></li>
           <li><%= link_to "マイアカウント", edit_user_registration_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <% else %>
