@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Robot World</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+    
+
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name == "notice" ? "success" : "error" %>">
+          <a class="close" data-dismiss="alert">×</a> <!-- アラートダイアログに×ボタンをつける -->
+          <%= msg %>
+        </div>
+      <% end %>
+      
+
+      
+
+     
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

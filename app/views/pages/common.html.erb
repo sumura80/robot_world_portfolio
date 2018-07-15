@@ -1,0 +1,65 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="<%= @robots %>" alt="Random robots">
+
+        <div class="table-responsive">
+          <table class="table">
+            <tr><br>
+              <td>名前:</td>
+              <td><%= @robots_name %></td>
+            </tr>
+            <tr>
+              <td>詳細:</td>
+              <td><%= @personality %> </td>
+            </tr>
+            <tr>
+              <td>特技:</td>
+              <td><%= @robots_power %> </td>
+            </tr>
+            <tr>
+              <td>製造番号:</td>
+              <td><%= @robots_product_no %></td>
+            </tr>
+            <tr>
+              <td>価格:</td>
+              <td><%= @rand_price%> 万円 </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+          <p><%= link_to "Back", root_path ,class: "btn btn-primary" %></p>
+
+           
+
+        </div>
+      </div>
+      <!-- ここからshowの右画面 -->
+      <div class="col-sm-7 col-sm-offset-1">
+          <h3><%= @robots_name %> のレビュー</h3><br>
+          <p><%= @robots_review %></p>
+          <p>とても便利で買ってよかったです。</p>
+          <hr>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div style="margin-bottom: 70px;"></div>
+
+<!-- 
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function(){
+        return $(this).attr('data-score');
+    }
+  });
+</script>
+ -->
+ 
+ 

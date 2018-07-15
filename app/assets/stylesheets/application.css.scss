@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*このアプリ全体のCSS */
+
+body{
+	/*background-color: #936fc4;*/
+	background: linear-gradient(#6E5B85, #D6C8E6);
+}
+
+.jumbotron {
+background-image: url("/assets/backwall.jpg");
+}
+
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+ 
+
+
+
+.img-circle{
+	width: 300px;
+	height: 300px;
+
+}
+
+.professor_profile{
+	margin: 50px 0;
+	color: white;
+	font-weight: bold;
+}
+
+
+.thumbnail{
+	padding: 0 5px;
+	width: 230px;
+}
+
+footer{
+	height: 100px;
+	background-color: #e6f9ff;
+}
+
+.table{
+	margin-top: 10px;
+}
+ 
+
+.copyright{
+	text-align: center;
+	padding-top: 40px;
+}
+
+ .new_robots{
+ 	background-color: #f0f4f5;
+ 		padding: 10px;
+ }
+
+.robot_introduction{
+	background-color: #f0f4f5;
+	padding: 10px;
+}
+
+.reviews{
+	border-bottom: 1px solid #dee0e2;
+	padding-top: 20px;
+}

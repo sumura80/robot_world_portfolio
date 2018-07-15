@@ -1,0 +1,99 @@
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h1>Robot Worldへようこそ</h1>
+    <p>あなたが作製したロボットを投稿してみませんか？<br></p>
+    <p>世界の開発者が新しいロボットを作り販売もしています。</p>
+    <p><%= link_to "新規登録", new_user_registration_path ,class: "btn btn-primary btn-lg" %></p>
+  </div>
+<% end %>
+
+
+  <div class="new_robots">
+    <h2>最近投稿されたロボットです。</h2>
+    <h3>カスタマービューを確認してみませんか？</h3>
+   <br>
+    <div class="row row-eq-height">
+      <% @listings.each do |listing| %>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail index_thumb">
+            <%= link_to (image_tag listing.image.url(:medium), class:"image"), listing  %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+ 
+ <br>
+<hr>
+<br>
+<section class="text-center">
+      <div class="container">
+        
+        <div class="row">
+          <h2 style="text-align: center; color:white;">世界の開発者から声が届いています。</h2>
+          <div class="col-sm-12 col-md-4 professor_profile">
+            <div class="professor_jpeg">               
+               <%= link_to image_tag('/assets/professor_01.jpeg',  class: 'img-circle'),  common_path %>
+              <!-- <img class="img-circle" src="/assets/pic1.jpeg" alt=""> -->
+              <h4>クリストファーE 工学博士.</h4>
+              <p class="font-weight-light mb-0">"世界の技術者を集め販売されている最新型の感情認識ヒューマノイドロボットです。"</p> <%= link_to "詳細を見る", common_path, class: "btn btn-success" %>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 professor_profile" >
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <%= link_to image_tag('/assets/professor_02.jpeg',  class: 'img-circle'),  common_path %>
+              <!-- <img class="img-circle" src="/assets/professor_02.jpeg" alt=""> -->
+              <h4>ジェシカ S 教授.</h4>
+              <p class="font-weight-light mb-0">"ペンシルベニア工学大学で最新版のロボットを作製しました。世界中の人を見分ける能力を身につけています。"</p>
+              <%= link_to "詳細を見る", common_path, class: "btn btn-success" %>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 professor_profile">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-circle" src="/assets/professor_03.jpeg" alt="">
+              <h4>デイビッド W 准教授.</h4>
+              <p class="font-weight-light mb-0">"パトレシアス国立大学の学生により<br>発明されたロボットです。"</p>
+              <%= link_to "詳細を見る", common_path, class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<br>
+<hr>
+<br>
+<div class="robot_introduction">
+<h2>最新ロボットのご紹介</h2>
+<br>
+
+
+<div class="row">
+ 
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="<%= @robots %> ">
+     </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="<%= @robots2 %>">
+     </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="<%= @robots3 %>">
+     </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="<%= @robots4 %>">
+     </div>
+  </div>
+</div>
+</div>
+ 
+<br><br><br>

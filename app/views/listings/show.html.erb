@@ -1,0 +1,81 @@
+<div class="panal panal-defaul" style="background-color: white;">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @listing.image.url(:medium) %><br><br>
+        <div class="star-rating" data-score= <%= @avg_review %> ></div>
+        <em><%= "#{@review.length} reviews" %></em>
+
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <td>Name:</td>
+              <td><%= @listing.name %></td>
+            </tr>
+            <tr>
+              <td>Description:</td>
+              <td><%= @listing.description %></td>
+            </tr>
+            <tr>
+              <td>Power:</td>
+              <td><%= @listing.power %></td>
+            </tr>
+            <tr>
+              <td>Product no:</td>
+              <td><%= @listing.product_no %></td>
+            </tr>
+            <tr>
+              <td>Price:</td>
+              <td><%= @listing.price %> 万円</td>
+            </tr>
+          </table>
+          <%= link_to "カスタマーレビューを書く" , new_listing_review_path(@listing), class: "btn btn-primary" %><br><br>
+          <%= link_to '編集', edit_listing_path(@listing),class:"btn btn-text" %> |
+          <%= link_to '一覧に戻る', listings_path,class:"btn btn-text" %>
+        </div>
+      </div>
+      <!-- ここからshowの右画面 -->
+      <div class="col-md-7 col-md-offset-1">
+          <h1 class="reviews_head"><%= @listing.name %></h1>
+          <p><%= @listing.description %></p>
+          <br>
+
+          <% if @review.blank? %>
+            <h3>まだレビューがありません。</h3>
+            <p>ぜひあなたの経験を投稿してみませんか？</p>
+          <% else %>
+            <% @review.each do |review| %>
+              <div class="reviews">
+                <div class="star-rating" data-score=  <%= review.rating %> ></div>
+                <!-- <p><%= review.rating %></p> -->
+
+                <p><%= review.comment %></p>
+              </div>
+            <% end %>
+          <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+ 
+
+<!-- 
+下記のサイトから持ってきた
+https://stackoverflow.com/questions/35167149/im-using-raty-js-star-rating-system-how-do-i-show-the-equivalent-integer-value
+star-ratingの部分を変更した
+ -->
+<div style="margin-bottom: 70px;"></div>
+
+<script>
+    $('.star-rating').raty({
+        readOnly: true,
+        path: '/assets/',
+        score: function() {
+            return $(this).attr('data-score')
+        }
+    });
+</script>
+ 
+
