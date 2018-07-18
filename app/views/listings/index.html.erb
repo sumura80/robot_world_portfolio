@@ -53,7 +53,8 @@
 
           <div class="col-sm-12 col-md-4 professor_profile">
             <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-circle" src="/assets/professor_03.jpeg" alt="">
+              <%= link_to image_tag('/assets/professor_03.jpeg',  class: 'img-circle'),  common_path %>
+              <!-- <img class="img-circle" src="" alt=""> -->
               <h4>デイビッド W 准教授.</h4>
               <p class="font-weight-light mb-0">"パトレシアス国立大学の学生により<br>発明されたロボットです。"</p>
               <%= link_to "詳細を見る", common_path, class: "btn btn-success" %>
